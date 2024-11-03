@@ -42,6 +42,14 @@ class Square(Rectangle):
     def __init__(self, side, x=0, y=0):
         super().__init__(side, side, x, y)
 
+    @property
+    def side(self):
+        return self.width
+
+    @side.setter
+    def side(self, value):
+        self.width = self.height = value
+
     def __repr__(self):
         return (
             f"{Shape.__repr__(self)}, со стороной {self.width},"
