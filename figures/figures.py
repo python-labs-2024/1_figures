@@ -10,6 +10,9 @@ class Shape:
     def __str__(self):
         return f"{self.name} по координатам ({self.x}, {self.y})"
 
+    def __repr__(self):
+        return f"{self.__class__.__name__}(x={self.x}, y={self.y})"
+
 
 class Rectangle(Shape):
     """Прямоугольники"""
@@ -31,6 +34,12 @@ class Rectangle(Shape):
         return (
             f"{super().__str__()}, со сторонами {self.width} и {self.height},"
             f" с площадью {self.area()} и периметром {self.perimeter()}"
+        )
+
+    def __repr__(self):
+        return (
+            f"{self.__class__.__name__}(width={self.width}, height={self.height},"
+            f" x={self.x}, y={self.y})"
         )
 
 
@@ -55,3 +64,6 @@ class Square(Rectangle):
             f"{super().__str__()}, со стороной {self.side},"
             f" с площадью {self.area()} и периметром {self.perimeter()}"
         )
+
+    def __repr__(self):
+        return f"{self.__class__.__name__}(side={self.side}, x={self.x}, y={self.y})"
