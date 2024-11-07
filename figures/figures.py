@@ -21,8 +21,24 @@ class Rectangle(Shape):
 
     def __init__(self, width, height, x=0, y=0):
         super().__init__(x, y)
-        self.width = width
-        self.height = height
+        self._width = width
+        self._height = height
+
+    @property
+    def width(self):
+        return self._width
+
+    @width.setter
+    def width(self, width):
+        self._width = width
+
+    @property
+    def height(self):
+        return self._height
+
+    @height.setter
+    def height(self, height):
+        self._height = height
 
     def area(self):
         return self.width * self.height
@@ -52,18 +68,26 @@ class Square(Rectangle):
         super().__init__(side, side, x, y)
 
     @property
-    def side(self):
-        return self.width
+    def width(self):
+        return self._width
 
-    @side.setter
-    def side(self, value):
-        self.width = self.height = value
+    @width.setter
+    def width(self, side):
+        self._width = self._height = side
+
+    @property
+    def height(self):
+        return self._height
+
+    @height.setter
+    def height(self, side):
+        self._width = self._height = side
 
     def __str__(self):
         return (
-            f"{super(Rectangle, self).__str__()}, со стороной {self.side},"
+            f"{super(Rectangle, self).__str__()}, со стороной {self.width},"
             f" с площадью {self.area()} и периметром {self.perimeter()}"
         )
 
     def __repr__(self):
-        return f"{self.__class__.__name__}(side={self.side}, x={self.x}, y={self.y})"
+        return f"{self.__class__.__name__}(side={self.width}, x={self.x}, y={self.y})"
