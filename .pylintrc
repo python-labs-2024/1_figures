@@ -1,5 +1,5 @@
 [MAIN]
-ignore=venv
+ignore=venv, build, dist
 
 [MESSAGES CONTROL]
 disable=missing-docstring
