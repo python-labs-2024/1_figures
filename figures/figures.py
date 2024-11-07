@@ -4,11 +4,11 @@ class Shape:
     name = "геометрическая фигура"
 
     def __init__(self, x=0, y=0):
-        self.__x = x
-        self.__y = y
+        self.x = x
+        self.y = y
 
-    def __repr__(self):
-        return f"{self.name} по координатам ({self.__x}, {self.__y})"
+    def __str__(self):
+        return f"{self.name} по координатам ({self.x}, {self.y})"
 
 
 class Rectangle(Shape):
@@ -27,9 +27,9 @@ class Rectangle(Shape):
     def perimeter(self):
         return 2 * (self.width + self.height)
 
-    def __repr__(self):
+    def __str__(self):
         return (
-            f"{Shape.__repr__(self)}, со сторонами {self.width} и {self.height},"
+            f"{super().__str__()}, со сторонами {self.width} и {self.height},"
             f" с площадью {self.area()} и периметром {self.perimeter()}"
         )
 
@@ -50,8 +50,8 @@ class Square(Rectangle):
     def side(self, value):
         self.width = self.height = value
 
-    def __repr__(self):
+    def __str__(self):
         return (
-            f"{Shape.__repr__(self)}, со стороной {self.width},"
+            f"{super().__str__()}, со стороной {self.side},"
             f" с площадью {self.area()} и периметром {self.perimeter()}"
         )
