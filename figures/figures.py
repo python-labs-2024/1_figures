@@ -61,7 +61,7 @@ class Square(Rectangle):
 
     def __str__(self):
         return (
-            f"{super(Shape, self).__str__()}, со стороной {self.side},"
+            f"{super(Rectangle, self).__str__()}, со стороной {self.side},"
             f" с площадью {self.area()} и периметром {self.perimeter()}"
         )
 
