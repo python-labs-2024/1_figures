@@ -41,10 +41,24 @@ pip install .
 
 ## Usage
 
-Пример использования
+Пример использования:
+
+
 
 ```python
-pass
+from figures import Rectangle
+
+rectangle = Rectangle(3, 5)
+print(rectangle.area())
+print(rectangle.perimeter())
+```
+
+```python
+from figures import Square
+
+square = Square(3)
+print(square.area())
+print(square.perimeter())
 ```
 
 ## Contributing
