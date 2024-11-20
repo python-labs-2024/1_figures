@@ -52,6 +52,12 @@ rectangle = Rectangle(3, 5)
 print(rectangle.area())
 print(rectangle.perimeter())
 ```
+Вывод:
+```
+15
+16
+```
+
 
 ```python
 from figures import Square
@@ -60,7 +66,11 @@ square = Square(3)
 print(square.area())
 print(square.perimeter())
 ```
-
+Вывод:
+```
+9
+12
+```
 ## Contributing
 
 Предварительно нужно создать и активировать виртуальное окружение, а также установить в него зависимости проекта
